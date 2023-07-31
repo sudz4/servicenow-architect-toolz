@@ -1,4 +1,8 @@
+# virtual library environment
 /sat_venv
 
+# secret shit to ignore
 .env  
 
+# files to ignore
+timecard_entry.txt
