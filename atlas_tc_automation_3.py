@@ -23,7 +23,7 @@ def chatgpt_conversation(conversation_Log):
         model=model_id,
         messages=conversation_Log
     )
-    print(response)  # print the response object
+    # print(response)  # print the response object
 
     # extract the role and content from the response message
     role = response.choices[0].message['role']
@@ -47,8 +47,7 @@ while True:
     prompt = input('User:')
     conversations.append({'role': 'user', 'content': prompt})
     conversations = chatgpt_conversation(conversations)
-    print(conversations)
-    print()
+    # print(conversations)
     print('{0}: {1}\n'.format(conversations[-1]['role'].strip(), conversations[-1]['content'].strip()))
-    # if conversations[-1]['content'].strip() == 'Bye':
-    #     break
+    if conversations[-1]['content'].strip() == 'quit':
+        break
