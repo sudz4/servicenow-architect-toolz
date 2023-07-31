@@ -42,12 +42,12 @@ conversations.append({
     'content': 'Hey sudz, I am a ServiceNow Certified Master Architect Assistant.'
 })
 conversations = chatgpt_conversation(conversations)
+print('{0}: {1}\n'.format(conversations[-1]['role'].strip(), conversations[-1]['content'].strip()))
 
 while True:
     prompt = input('User:')
     conversations.append({'role': 'user', 'content': prompt})
     conversations = chatgpt_conversation(conversations)
-    # print(conversations)
     print('{0}: {1}\n'.format(conversations[-1]['role'].strip(), conversations[-1]['content'].strip()))
     if conversations[-1]['content'].strip() == 'quit':
         break
