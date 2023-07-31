@@ -1,7 +1,6 @@
 # --------------------------------------------------------------
 # PROJECT BILLABLE HOURS DAYS
 # --------------------------------------------------------------
-
 import os
 from langchain.llms import OpenAI
 from langchain import PromptTemplate
@@ -14,6 +13,7 @@ load_dotenv(find_dotenv())
 
 # Get API key
 api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = api_key
 
 # assign model id
 model_id = 'gpt-4'
@@ -50,6 +50,5 @@ while True:
     print(conversations)
     print()
     print('{0}: {1}\n'.format(conversations[-1]['role'].strip(), conversations[-1]['content'].strip()))
-    if conversations[-1]['content'].strip() == 'Bye':
-        break
-    
+    # if conversations[-1]['content'].strip() == 'Bye':
+    #     break
